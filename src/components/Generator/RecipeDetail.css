@@ -1,0 +1,293 @@
+/* 🌌 Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7); /* Darker for a modern vibe */
+  backdrop-filter: blur(8px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 📦 Full-Screen Modal Content */
+.modal-content {
+  background: #fff;
+  padding: 32px;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  animation: popIn 0.3s ease-in-out;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ❌ Close Button */
+.close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 32px;
+  color: #444;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  color: #000;
+  transform: rotate(90deg);
+}
+
+/* 📸 Full-Screen Recipe Image Container */
+.recipe-image {
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  background: #f0f0f0;
+}
+
+/* 📸 Recipe Image */
+.recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.recipe-image img:hover {
+  transform: scale(1.05);
+}
+
+/* 📄 Recipe Title */
+.recipe-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+/* 🍴 Detailed Info */
+.recipe-details {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.recipe-detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: #444;
+  background: #f5f5f5;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ✅ Tabs Container */
+.tabs-container {
+  margin-top: 24px;
+}
+
+/* 🌐 Tabs List - No Container Style */
+.tabs-list {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  gap: 0;
+  border-bottom: 2px solid #ddd;
+}
+
+/* 🌟 Tabs Trigger - Seamless Button Style */
+.tabs-list button {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  color: #555;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* Active State */
+.tabs-list button.active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+/* Hover Effect Removed */
+.tabs-list button:hover {
+  color: #555;
+  border-bottom-color: transparent;
+}
+
+/* Disabled State */
+.tabs-list button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* 🗂️ Tab Content */
+.tab-content {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  color: #444;
+}
+
+/* ✅ List Styles */
+ul, ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+}
+
+/* 📍 Save Button */
+.save-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.save-button:hover {
+  background-color: #fb8c00;
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 16px;
+  }
+
+  .recipe-title {
+    font-size: 28px;
+  }
+
+  .recipe-details {
+    flex-direction: column;
+  }
+
+  .tabs-list button {
+    font-size: 14px;
+  }
+
+  .close-button {
+    font-size: 28px;
+  }
+}
+
+/* 🧊 Confirm Modal Overlay */
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+/* 📦 Confirm Modal Box */
+.modal-box {
+  background: white;
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* 🎛️ Modal Buttons */
+.modal-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 🧷 Button Styles */
+.confirm-btn,
+.cancel-btn {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.confirm-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.cancel-btn {
+  background: #d32f2f;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: #388e3c;
+}
+
+.cancel-btn:hover {
+  background: #b71c1c;
+}

@@ -1,0 +1,163 @@
+/* AuthContainer.css */
+
+/* :root color variables are kept as they were in your original snippet */
+:root {
+  --background: #f0f2f5;
+  --primary: #05080b;
+  --primary-light: #e6f2ff;
+  --dark-gray: #333;
+  --muted-foreground: #6c757d;
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Full-Screen Auth Container */
+.auth-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Original: This centers the card vertically */
+  /* To move card higher while still generally centering, reduce top/bottom padding: */
+  padding: 1rem 2rem; /* MODIFIED: Was padding: 2rem; Top/bottom padding reduced */
+  /* ALTERNATIVE: If you want it more towards the top, not centered: */
+  /* justify-content: flex-start; */
+  /* padding-top: 2rem; */ /* Then control top space with padding-top or margin-top on card */
+  /* padding-left: 2rem; */   /* Keep original side padding */
+  /* padding-right: 2rem; */  /* Keep original side padding */
+  /* padding-bottom: 2rem; */ /* Keep original bottom padding */
+
+ 
+  box-sizing: border-box;
+  overflow-y: auto; /* Original: Enables scrolling if content overflows */
+}
+
+/* Auth Card Styling */
+.auth-card {
+  width: 100%;
+  max-width: 28rem;
+  background-color: #fff; /* Original */
+  box-shadow: var(--shadow-lg); /* Original */
+  border-radius: 8px; /* Original */
+  border: none; /* Original */
+  overflow: hidden; /* Original */
+  /* If using justify-content: flex-start on .auth-container, you might add margin-top here: */
+  /* margin-top: 2rem; */
+}
+
+/* Card Content */
+.auth-card-content {
+  /* Reduce top/bottom padding to move content up within the card */
+  padding: 1.5rem 2rem; /* MODIFIED: Was padding: 2rem; Top/bottom padding reduced */
+  /* Or more specifically: */
+  /* padding-top: 1rem; */
+  /* padding-bottom: 2rem; */ /* Keep original bottom */
+  /* padding-left: 2rem; */   /* Keep original sides */
+  /* padding-right: 2rem; */  /* Keep original sides */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* MODIFIED: Was gap: 1.2rem; Reduced for tighter layout */
+}
+
+/* Logo Container Centering */
+.auth-logo-container {
+  display: flex;
+  justify-content: center;
+  /* margin-bottom can be handled by parent's gap, or define if specific spacing needed before next element */
+}
+
+/* Logo Styling */
+.auth-logo {
+  width: 3.5rem; /* MODIFIED: Was 4rem; Slightly smaller to save vertical space */
+  height: 3.5rem;/* MODIFIED: Was 4rem */
+  background-color: var(--primary-light); /* Original */
+  border-radius: 50%; /* Original */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo Icon Size */
+.auth-logo-icon {
+  width: 1.75rem; /* MODIFIED: Was 2rem; Proportionally smaller */
+  height: 1.75rem;/* MODIFIED: Was 2rem */
+  color: var(--black); /* Original */
+}
+
+/* Welcome Text Styling */
+.welcome-text {
+  text-align: center;
+  font-size: 1.6rem; /* MODIFIED: Was 1.8rem; Slightly smaller */
+  color: var(--dark-gray); /* Original */
+  margin-top: 0; /* If logo is present, gap handles spacing. If no logo, may need small margin-top */
+  margin-bottom: 0.3rem; /* MODIFIED: Was 0.5rem; Reduced for closer spacing */
+}
+
+/* Form Section */
+.auth-form {
+  /* margin-top: 0.5rem; */ /* MODIFIED: Removed margin, rely on parent gap */
+  flex-grow: 1; /* Original */
+}
+
+/* Social Login Section */
+.auth-social {
+  /* margin-top: 1.5rem; */ /* MODIFIED: Removed margin, rely on parent gap */
+}
+
+/* Terms and Conditions Text */
+.terms-text {
+  /* margin-top: 1rem; */ /* MODIFIED: Removed margin, rely on parent gap */
+  font-size: 0.875rem; /* Original */
+  color: var(--muted-foreground); /* Original */
+  text-align: center;
+}
+
+/* Link Styling */
+.link {
+  color: var(--primary); /* Original */
+  text-decoration: none; /* Original */
+}
+
+.link:hover {
+  text-decoration: underline; /* Original */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    /* padding: 1.5rem; */ /* Original responsive */
+    /* Further reduce top/bottom padding for mobile if needed */
+    padding: 0.75rem 1.5rem; /* MODIFIED: Reduced top/bottom for mobile */
+  }
+
+  .auth-card-content {
+    /* padding: 1.5rem; */ /* Original responsive */
+    /* Further reduce top/bottom padding for mobile if needed */
+    padding: 1rem 1.5rem; /* MODIFIED: Reduced top/bottom for mobile */
+    gap: 0.8rem; /* MODIFIED: Tighter gap on mobile */
+  }
+
+  .auth-logo {
+    width: 3rem; /* Original responsive */
+    height: 3rem; /* Original responsive */
+  }
+
+  .auth-logo-icon {
+    width: 1.5rem; /* Original responsive */
+    height: 1.5rem; /* Original responsive */
+  }
+
+  .welcome-text {
+    font-size: 1.4rem; /* MODIFIED: Was 1.5rem in original responsive */
+    margin-bottom: 0.2rem; /* MODIFIED: Tighter margin on smaller screens */
+  }
+
+  /* .auth-form margin-top will be handled by parent gap */
+  /* .auth-social margin-top will be handled by parent gap */
+
+  .terms-text {
+    font-size: 0.75rem; /* Original responsive */
+  }
+  
+}
