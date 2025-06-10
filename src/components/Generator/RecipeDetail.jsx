@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Clock, ChefHat, Utensils, X, Bookmark } from "lucide-react";
-// --- CORRECTED IMPORTS ---
-// The component files (card.jsx, badge.jsx, etc.) are located in the 'ui' folder, not 'buttons'.
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Badge } from "../ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-// --- END OF CORRECTIONS ---
+import { Card, CardContent, CardHeader, CardTitle } from "../buttons/card";
+import { Badge } from "../buttons/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../buttons/tabs";
 import Swal from "sweetalert2";
 import "./RecipeDetail.css";
 
